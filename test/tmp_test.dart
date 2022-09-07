@@ -25,26 +25,23 @@ void main() {
             throwsA(isA<ArgumentException>()));
       });
       test('a is NaN -> throw exception', () {
-        expect(() => quadraticEquation.solve(double.nan, 1, 1),
-            throwsA(isA<ArgumentException>()));
+        expect(() => quadraticEquation.solve(double.nan, 1, 1), throwsA(isA<ArgumentException>()));
       });
 
       test('b is infinity -> throw exception', () {
-        expect(() => quadraticEquation.solve(1, double.nan, 1),
+        expect(() => quadraticEquation.solve(1, double.infinity, 1),
             throwsA(isA<ArgumentException>()));
       });
       test('b is NaN -> throw exception', () {
-        expect(() => quadraticEquation.solve(1, double.nan, 1),
-            throwsA(isA<ArgumentException>()));
+        expect(() => quadraticEquation.solve(1, double.nan, 1), throwsA(isA<ArgumentException>()));
       });
 
       test('c is infinity -> throw exception', () {
-        expect(() => quadraticEquation.solve(1, 1, double.nan),
+        expect(() => quadraticEquation.solve(1, 1, double.infinity),
             throwsA(isA<ArgumentException>()));
       });
       test('c is NaN -> throw exception', () {
-        expect(() => quadraticEquation.solve(1, 1, double.nan),
-            throwsA(isA<ArgumentException>()));
+        expect(() => quadraticEquation.solve(1, 1, double.nan), throwsA(isA<ArgumentException>()));
       });
     });
   });
