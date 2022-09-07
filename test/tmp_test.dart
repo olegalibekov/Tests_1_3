@@ -19,7 +19,7 @@ void main() {
       expect(() => quadraticEquation.solve(0, 1, 1), throwsA(isA<ArgumentException>()));
     });
 
-    group('', () {
+    group('Non double values tests', () {
       test('a is infinity -> throw exception', () {
         expect(() => quadraticEquation.solve(double.infinity, 1, 1),
             throwsA(isA<ArgumentException>()));

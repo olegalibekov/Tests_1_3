@@ -6,7 +6,7 @@ import 'extension.dart';
 
 class Equation {
   List<double> solve(double a, double b, double c) {
-    if (a.abs() < Constants.epsilon) throw ArgumentException('First argument "a" is 0.0');
+    if (a.isInteger() && a == 0) throw ArgumentException('First argument "a" is 0');
     if ([a, b, c].firstWhereOrNull((element) => element.isInfinite || element.isNaN) != null) {
       throw ArgumentException('Argument contains inappropriate value (infinite or NaN)');
     }

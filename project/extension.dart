@@ -6,3 +6,7 @@ extension MyIterable<T> on Iterable<T> {
     return list.isEmpty ? null : list.first;
   }
 }
+
+extension DoubleFloatingPoint on double {
+  bool isInteger() => this is int || this == this.roundToDouble();
+}
